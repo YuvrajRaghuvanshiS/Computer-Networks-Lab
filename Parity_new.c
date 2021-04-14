@@ -7,40 +7,52 @@ Auther : Yuvraj Raghuvanshi (https://github.com/yuvrajraghuvanshis)
 #include <stdio.h>
 #include <iostream>
 
+struct string
+{
+    char array[10];
+};
 struct dataword_codeword
 {
-    int dataword, codeword, parity;
+    string dataword, codeword;
+    char parity;
 };
 
-char CountNumberOf1S(int num)
+char CountNumberOf1S(struct string temp)
 {
-    int rem, count = 0;
-    while (num > 0)
+    int i = 0, count = 0;
+    while (temp.array[i] != '\000' && i < 10)
     {
-        rem = num % 10;
-        if (rem == 1)
+        if (temp.array[i] == '1')
             count++;
-        num /= 10;
+        i++;
     }
 
-    return count % 2 == 0 ? 0 : 1;
+    return count % 2 == 0 ? '0' : '1';
 }
 
-int AppendParityToCodeword(int dataword, int parity)
+string AppendParityToCodeword(struct string dataword, char parity)
 {
-    if (parity == 0)
+    int i = 0;
+    while (dataword.array[i] != '\000')
     {
-        return dataword * 10;
+        i++;
+    }
+
+    if (parity == '0')
+    {
+        dataword.array[i] = '0';
     }
     else
     {
-        return dataword * 10 + 1;
+        dataword.array[i] = '1';
     }
+    return dataword;
 }
 
 int main()
 {
-    int dn, i, temp;
+    int dn, i;
+
     struct dataword_codeword dc[10] = {};
     printf("Enter the number of datawords : ");
     scanf("%d", &dn);
@@ -48,7 +60,8 @@ int main()
     // Enter dataword and it's parity...
     for (i = 0; i < dn; i++)
     {
-        scanf("%d", &temp);
+        struct string temp = {};
+        scanf("%s", &temp.array);
         dc[i].dataword = temp;
         dc[i].parity = CountNumberOf1S(temp);
     }
@@ -62,7 +75,7 @@ int main()
     printf("DW\tCW\tP(DW)");
     for (i = 0; i < dn; i++)
     {
-        printf("\n%d\t%d\t%d", dc[i].dataword, dc[i].codeword, dc[i].parity);
+        printf("\n%s\t%s\t%c", dc[i].dataword.array, dc[i].codeword.array, dc[i].parity);
     }
 
     printf("\n");
