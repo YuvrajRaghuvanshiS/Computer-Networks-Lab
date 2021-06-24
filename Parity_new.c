@@ -1,7 +1,7 @@
 /*
 Date : 13/04/2021
 Obj : Program to input a dataword and output codeword with even parity bit.
-Auther : Yuvraj Raghuvanshi (https://github.com/yuvrajraghuvanshis)
+Author : Yuvraj Raghuvanshi (https://github.com/yuvrajraghuvanshis)
 */
 
 #include <stdio.h>

@@ -1,7 +1,7 @@
 /*
 Date : 30/04/2021
 Obj : Take an input from user which came from noisy channel and has atmost 1 bit error and try to find error out using Hamming Code.
-Auther : Yuvraj Raghuvanshi (https://github.com/yuvrajraghuvanshis)
+Author : Yuvraj Raghuvanshi (https://github.com/yuvrajraghuvanshis)
 */
 // HammingCode(15,11)
 #include <stdio.h>

@@ -1,7 +1,7 @@
 /*
 Date : 22/06/2021
 Obj : Find class and network address of given IP address in binary format...
-Auther : Yuvraj Raghuvanshi (https://github.com/yuvrajraghuvanshis)
+Author : Yuvraj Raghuvanshi (https://github.com/yuvrajraghuvanshis)
 */
 
 #include <stdio.h>

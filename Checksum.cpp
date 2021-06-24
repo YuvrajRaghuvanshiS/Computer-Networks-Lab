@@ -1,11 +1,11 @@
 /*
 Date : 27/04/2021
 Obj : A program which takes some binary input and calculates it's checksum. Further ask to change any input to simulate noise transmission and calculates new checksum...
-Auther : Yuvraj Raghuvanshi (https://github.com/yuvrajraghuvanshis)
+Author : Yuvraj Raghuvanshi (https://github.com/yuvrajraghuvanshis)
 */
 
 #include <stdio.h>
-#include <istream>
+#include <iostream>
 #include <bits/stdc++.h>
 using namespace std;
 
@@ -46,20 +46,20 @@ string addBinaryAsStrings(string checksum, string dataword)
     return result;
 }
 
-// string addWrappedSum(string checksum)
-// {
-//     int *pointToExtraBits;
-//     pointToExtraBits = checksum.size() - 8;
-//     int requiredLength = 8, checksumLength = checksum.size(), i;
-//     int extraBitsLen = checksumLength - requiredLength;
-//     char extraBits[extraBitsLen] = {};
-//     for (i = 0; i < extraBitsLen; i++)
-//     {
-//         extraBits[extraBitsLen--] = checksum[i];
-//     }
-//     printf("%s", extraBits);
-//     return "meow";
-// }
+string addWrappedSum(string checksum)
+{
+    int *pointToExtraBits;
+    pointToExtraBits = checksum.size() - 8;
+    int requiredLength = 8, checksumLength = checksum.size(), i;
+    int extraBitsLen = checksumLength - requiredLength;
+    char extraBits[extraBitsLen] = {};
+    for (i = 0; i < extraBitsLen; i++)
+    {
+        extraBits[extraBitsLen--] = checksum[i];
+    }
+    printf("%s", extraBits);
+    return "meow";
+}
 
 string onesComplement(string checksum)
 {
