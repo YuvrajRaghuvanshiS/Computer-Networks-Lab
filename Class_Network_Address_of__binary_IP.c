@@ -18,6 +18,8 @@ int main()
         if (temp != 0 && temp != 1)
         {
             printf("Incorrect IP, exiting...");
+            printf("\n\n");
+            system("pause"); // To freeze screen.
             return -1;
         }
         IP[i] = temp;
